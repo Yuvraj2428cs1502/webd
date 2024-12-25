@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Ideal Dog Breed</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Find Your Ideal Dog Breed</h1>
+        <p>Answer a few questions to discover which dog breed suits your lifestyle.</p>
+    </header>
+
+    <section class="questionnaire">
+        <h2>Answer these questions to find your ideal dog breed:</h2>
+        <form id="dogQuizForm">
+            <div>
+                <label>How active are you?</label>
+                <select id="activityLevel">
+                    <option value="high">Very Active</option>
+                    <option value="medium">Moderately Active</option>
+                    <option value="low">Low Activity</option>
+                </select>
+            </div>
+            <div>
+                <label>Do you have kids?</label>
+                <select id="hasKids">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div>
+                <label>Do you live in a house or an apartment?</label>
+                <select id="livingSpace">
+                    <option value="house">House</option>
+                    <option value="apartment">Apartment</option>
+                </select>
+            </div>
+            <div>
+                <label>What size dog do you prefer?</label>
+                <select id="dogSize">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+            <button type="button" onclick="getBreedRecommendations()">Find My Breed</button>
+        </form>
+    </section>
+
+    <section id="results" class="hidden">
+        <h2>Your Ideal Dog Breeds</h2>
+        <ul id="recommendedBreeds"></ul>
+    </section>
+
+    <footer>
+        <p>Created by Yuvraj Singh Rathore | CS D</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

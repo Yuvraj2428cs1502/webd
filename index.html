@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Stalinist+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg">
+        <div class="box">
+            <div class="login-heading"><h1>Login</h1></div>
+            
+  
+            <div class="login-username boxy">
+                <input id="loginUsername" class="duhh1 huhh" type="text" placeholder="Username or Email" required> 
+                <i class="fa-solid fa-user ico"></i>                
+            </div>
+            
+
+            <div class="password boxy">
+                <input id="loginPassword" class="duhh1 huhh" type="password" placeholder="Password" required>
+                <i class="fa-solid fa-lock ico"></i>
+            </div>
+
+
+            <div class="remember-and-forget">
+                <div class="remember-btn">
+                    <label for="101">
+                        <input type="checkbox" value="math" name="input" id="101" > Remember me
+                    </label>
+                </div>
+                <div class="forgot-btn"><a href="forgot-password.html"><b>Forgot Password?</b></a></div>
+            </div>
+
+            <br>
+
+
+            <div class="login-button">
+                <button type="button" onclick="loginUser()"><b>Login</b></button>
+            </div>
+
+
+            <div class="registter">
+                <span>Don't have an account?</span>
+                <a href="register.html"><b>Register</b></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function loginUser() {
+
+            const usernameOrEmail = document.getElementById('loginUsername').value.trim();
+            const password = document.getElementById('loginPassword').value;
+    
+
+            if (!usernameOrEmail || !password) {
+                alert('Dono bharna pagal');
+                return;
+            }
+    
+
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+    
+
+            const user = users.find(user => 
+                (user.email === usernameOrEmail || user.username === usernameOrEmail) && 
+                user.password === password
+            );
+    
+
+            if (user) {
+                alert(`Welcome, ${user.username}!`);
+                window.location.href =' pet.html'
+            } else {
+                alert('Invalid username/email or password.');
+            }
+        }
+    </script>
+</body>
+</html>

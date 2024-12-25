@@ -1,0 +1,101 @@
+body{
+    background-image: url(./rgutyG.jpg);
+    background-size: cover;
+    background-position-y: -50px;
+    font-family: "Fredoka", sans-serif;
+
+}
+.box{
+    height: 65vh;
+    width: 25%;
+    background-color: transparent;
+    margin-top:16vh ;
+    margin-left: 36%;
+    border: 1px white solid;
+    border-radius: 10%;
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login-heading{
+    color: white;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    font-family: "Orbitron", sans-serif;
+    font-size: larger;
+}
+.password{
+    display: flex;
+    justify-content: center;
+}
+.login-username{
+    display: flex;
+    justify-content: center;
+}
+.login-username i{ z-index: 2;
+    margin-top: 12px;
+    margin-left: 20px;
+}
+.password i{ z-index: 2;
+    margin-top: 12px;
+    margin-left: 20px;
+}
+.duhh1{
+    color:white;
+    height: 5.5vh;
+    width: 75%; 
+    border: 0px;
+    color: white;
+    background-color: transparent;
+}
+
+.duhh1:focus{
+    outline: none;
+}
+.duhh::placeholder{
+    color: white;
+}
+.boxy{
+    background-color: transparent;
+    width: 80%;
+    margin: 5px;
+    padding: 8px;
+    border: 1px white solid;
+    border-radius: 40px;
+}
+
+.ico{
+    color: rgb(255, 255, 255);
+}
+.remember-and-forget{
+    color: white;
+    display: flex;
+    margin-top: 11px;
+    }
+.remember-and-forget a{
+    color: white;
+}
+.remember-btn{
+    margin-right: 70px;
+}
+.login-button{
+    height: 7vh;
+    width: 84%;
+    background-image: linear-gradient(to right, #962196 , #29b0c2);
+    border-radius: 40px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    margin-top: 5px;
+}
+.registter{
+    color: rgb(255, 255, 255);
+    margin-top: 20px;
+}
+.registter a{
+    color: white;
+}
+
+

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Stalinist+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg">
+        <div class="box">
+            <div class="login-heading"><h1>Register</h1></div>
+            
+            <!-- Username Input -->
+            <div class="login-username boxy">
+                <input id="username" class="duhh1 huhh" type="text" placeholder="Username" required>
+                <i class="fa-solid fa-user ico"></i>
+            </div>
+            
+            <!-- Email Input -->
+            <div class="email boxy">
+                <input id="email" class="duhh1 huhh" type="email" placeholder="Email" required>
+                <i class="fa-solid fa-envelope ico"></i>
+            </div>
+            
+            <!-- Password Input -->
+            <div class="password boxy">
+                <input id="password" class="duhh1 huhh" type="password" placeholder="Password" required>
+                <i class="fa-solid fa-lock ico"></i>
+            </div>
+            
+            <!-- Confirm Password Input -->
+            <div class="password-confirm boxy">
+                <input id="confirmPassword" class="duhh1 huhh" type="password" placeholder="Confirm Password" required>
+                <i class="fa-solid fa-lock ico"></i>
+            </div>
+            
+            <br>
+            
+            <!-- Register Button -->
+            <div class="register-button">
+                <button type="button" onclick="registerUser()"><b>Register</b></button>
+            </div>
+            
+            <!-- Login Link -->
+            <div class="login">
+                <span>Already have an account?</span>
+                <a href="index.html"><b>Login</b></a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function registerUser() {
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+    
+            if (!username || !email || !password || !confirmPassword) {
+                alert('All fields are required!');
+                return;
+            }
+    
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+    
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const userExists = users.some(user => user.email === email);
+    
+            if (userExists) {
+                alert('A user with this email already exists!');
+                return;
+            }
+    
+            const newUser = { username, email, password };
+            users.push(newUser);
+            localStorage.setItem('users', JSON.stringify(users));
+    
+            alert('Registration successful! You can now log in.');
+            window.location.href = 'index.html'; 
+        }
+    </script>
+</body>
+</html>
